@@ -42,7 +42,6 @@ public class KakaoLoginService {
         params.add("client_id", apiKey);
         params.add("redirect_uri", redirectUri);
         params.add("code", code);
-
         // 요청 생성
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<>(params, headers);
         // 카카오 서버의 응답을 리턴
@@ -51,7 +50,18 @@ public class KakaoLoginService {
         return response;
     }
 
-    public KakaoInfoResponseDto getInfo(KakaoInfoRequestDto requestDto) {
-        return new KakaoInfoResponseDto();
+    public String getInfo(KakaoInfoRequestDto requestDto) {
+        String accessToken = requestDto.getAccessToken();
+        System.out.println("Access Token: " + accessToken);
+        // 헤더 설정
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(accessToken);
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        // 요청 생성
+        HttpEntity<String> request = new HttpEntity<>(null, headers);
+        // 카카오 서버의 응답을 리턴
+        String response = restTemplate.postForObject(getInfoUrl, request, String.class);
+        System.out.println("응답: " + response);
+        return response;
     }
 }

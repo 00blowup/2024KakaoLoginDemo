@@ -30,7 +30,7 @@ public class KakaoLoginController {
 
     // 액세스 토큰으로 사용자 정보 가져오기
     @PostMapping("/info")
-    public KakaoInfoResponseDto getInfo (KakaoInfoRequestDto requestDto) {
+    public String getInfo (@RequestBody KakaoInfoRequestDto requestDto) {
         return kakaoLoginService.getInfo(requestDto);
     }
 }
