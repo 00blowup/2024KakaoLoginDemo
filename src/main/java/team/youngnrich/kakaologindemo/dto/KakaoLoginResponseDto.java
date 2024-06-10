@@ -5,5 +5,5 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class KakaoTokenResponseDto {
+public class KakaoLoginResponseDto {
 }

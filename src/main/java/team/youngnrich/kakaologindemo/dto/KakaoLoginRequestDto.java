@@ -5,5 +5,6 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class KakaoInfoResponseDto {
+public class KakaoLoginRequestDto {
+    private String code;
 }
