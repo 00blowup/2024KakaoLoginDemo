@@ -15,7 +15,6 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import team.youngnrich.kakaologindemo.dto.KakaoInfoRequestDto;
 import team.youngnrich.kakaologindemo.dto.KakaoLoginRequestDto;
-import team.youngnrich.kakaologindemo.dto.KakaoLoginResponseDto;
 import team.youngnrich.kakaologindemo.dto.KakaoTokenRequestDto;
 
 @Service
