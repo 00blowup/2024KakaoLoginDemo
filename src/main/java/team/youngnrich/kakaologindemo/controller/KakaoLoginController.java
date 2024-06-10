@@ -28,7 +28,7 @@ public class KakaoLoginController {
         return kakaoLoginService.getInfo(requestDto);
     }
 
-    // 실제 사용할 프로세스(위의 authorize+getInfo 과정 수행 후, 사용자 정보를 바탕으로 회원가입/로그인 진행)
+    // 실제 사용할 프로세스(카카오유저 id로 사용자를 구분하기 위해, 위의 authorize와 getInfo를 모두 수행한 후 id만 꺼내오기)
     @PostMapping("/getId")
     public ResponseEntity<String> login (@RequestBody KakaoLoginRequestDto requestDto) throws ParseException {
         return ResponseEntity.ok().body(kakaoLoginService.login(requestDto));
